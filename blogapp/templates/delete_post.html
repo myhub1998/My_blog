@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Delete Post!{% endblock %}
+{% block content %}
+<br><br>
+<div class="col-12">
+{% if user.is_authenticated %}
+
+    <h3>Delete : {{ post.title }}</h3>
+    <br>
+    <div class="form-group">
+        <form method="post">
+            {% csrf_token %}
+<div class="alert alert-secondary" role="alert">
+  Are You Sure ?
+</div><br>
+            <button class="btn btn-danger">Delete Post</button>
+            </form>
+    </div>
+
+{% else %}
+</div>
+you can't delete blog
+{% endif %}
+
+
+
+{% endblock %}
